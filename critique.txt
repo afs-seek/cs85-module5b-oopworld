@@ -1,0 +1,22 @@
+/*
+AI Method Critique
+
+The Exact Prompt I Used
+"Write a PHP method for a TaskTracker class that calculates remaining hours based on completed hours. Include validation for negative values. Make it secure and efficient."
+
+The Raw AI-Generated Code
+public function calculateRemainingHours($completedHours) {
+    if ($completedHours < 0) {
+        throw new Exception("Completed hours cannot be negative");
+    }
+    return $this->hoursEstimated - $completedHours;
+}
+
+My Critique
+- Security: It validates against negative numbers, which prevents bad data from breaking the math.
+- Efficiency: It is a simple math equation with no unnecessary loops.
+- Correctness: It does not check if the completed hours are greater than the total estimated hours. If I estimate 10 hours but log 15, it returns -5 hours.
+- Style: It lacks a comment block explaining what the method does.
+- Changes Made: I would add an `if` statement to cap the completed hours at the total estimated hours so the result never goes below zero.
+
+*/

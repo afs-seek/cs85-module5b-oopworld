@@ -1,4 +1,5 @@
 /*
+Nedra Lindsey
  PREDICTIONS:
  -Constructor: Should initialize the task with the title, priority, hours, notes, and completed status.
  -Summary(): Should output the task title, "Pending" status, and the notes.
@@ -53,6 +54,14 @@ class TaskTracker {
             return true;
         }
         return false;
+    }
+
+     // 5. AI Generated Method: Calculate remaining hours
+    public function calculateRemainingHours($completedHours) {
+        if ($completedHours < 0) {
+            throw new Exception("Completed hours cannot be negative");
+        }
+        return $this->hoursEstimated - $completedHours;
     }
 }
 
