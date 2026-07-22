@@ -23,5 +23,31 @@ class TaskTracker {
         
     }
 
-   
+   // 1. Summary display method
+    public function summary() {
+        $status = $this->completed ? "Completed" : "Pending";
+        return "- Title: \"{$this->title}\"\n- Completed: {$status}\n- Notes: \"{$this->notes}\"";
+    }
+
+    // 2. Calculated value method
+    public function getRemainingHours() {
+        return $this->hoursEstimated;
+    }
+
+    // 3. Change property method
+    public function setCompleted($isCompleted) {
+        $this->completed = $isCompleted;
+    }
+
+    // 4. Decision logic method
+    public function isHighPriority() {
+        if ($this->priority > 3) {
+            return true;
+        }
+        return false;
+    }
+}
+
+
+
     </pre>
